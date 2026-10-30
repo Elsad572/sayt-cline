@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="az" dir="az">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>C++ və Python Compiler</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <!-- Compiler Section -->
+        <section class="compiler-section">
+            <div class="section-header">
+                <h2>Compiler</h2>
+                <div class="tabs">
+                    <button class="tab-btn active" data-tab="cpp">C++</button>
+                    <button class="tab-btn" data-tab="python">Python</button>
+                </div>
+            </div>
+            
+            <!-- C++ Compiler -->
+            <div class="compiler-tab cpp active" id="cpp-tab">
+                <div class="editor-wrapper">
+                    <textarea class="code-editor cpp-editor" placeholder="// C++ kodu yazın..." id="cpp-editor"></textarea>
+                    <div class="editor-controls">
+                        <button class="btn-file-upload">Upload File</button>
+                        <button class="btn-save">Save</button>
+                    </div>
+                </div>
+                <div class="file-info">
+                    <span class="file-name">Heçbir fayl seçilməyib</span>
+                </div>
+                <div class="run-controls">
+                    <button class="btn-run">Run</button>
+                </div>
+                <div class="console-output" id="cpp-console"></div>
+            </div>
+            
+            <!-- Python Compiler -->
+            <div class="compiler-tab python" id="python-tab">
+                <div class="editor-wrapper">
+                    <textarea class="code-editor python-editor" placeholder="# Python kodu yazın..." id="python-editor"></textarea>
+                    <div class="editor-controls">
+                        <button class="btn-file-upload">Upload File</button>
+                        <button class="btn-save">Save</button>
+                    </div>
+                </div>
+                <div class="file-info">
+                    <span class="file-name">Heçbir fayl seçilməyib</span>
+                </div>
+                <div class="run-controls">
+                    <button class="btn-run">Run</button>
+                </div>
+                <div class="console-output" id="python-console"></div>
+            </div>
+        </section>
+
+        <!-- Information Section -->
+        <section class="info-section">
+            <div class="info-header">
+                <h2>Məlumat</h2>
+            </div>
+            <div class="info-content">
+                <div class="teacher-profile">
+                    <div class="teacher-avatar" id="teacher-avatar">
+                        <svg class="avatar-svg" viewBox="0 0 200 200">
+                            <circle cx="100" cy="100" r="90" fill="#3b82f6"/>
+                            <text x="100" y="110" text-anchor="middle" font-family="Inter" font-size="20" fill="white" font-weight="600">FU</text>
+                        </svg>
+                    </div>
+                    <div class="teacher-info">
+                        <h3 class="teacher-name" id="teacher-name">Qurbanov Fuad</h3>
+                        <p class="teacher-title" id="teacher-title">Müəllim</p>
+                    </div>
+                    <input type="file" class="file-input" id="avatar-upload" accept="image/*" style="display: none;">
+                    <button class="btn-change-avatar" style="display: none;">Şəkil dəyiş</button>
+                </div>
+                <div class="teacher-absent" id="teacher-absent">
+                    Profil şəkil yoxdur
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <script src="scripts.js"></script>
+</body>
+</html>

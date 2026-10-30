@@ -1,0 +1,345 @@
+:root {
+    --primary-color: #3b82f6;
+    --primary-dark: #2563eb;
+    --secondary-color: #10b981;
+    --background: #0f172a;
+    --card: #1e293b;
+    --text-primary: #f8fafc;
+    --text-secondary: #cbd5e1;
+    --border: #334155;
+    --accent: #67e8f9;
+    --warning: #f87171;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: var(--background);
+    color: var(--text-primary);
+    min-height: 100vh;
+    line-height: 1.6;
+}
+
+.container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.section-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 24px;
+    flex-wrap: wrap;
+    gap: 16px;
+}
+
+.section-header h2 {
+    font-size: 20px;
+    font-weight: 600;
+    color: var(--text-primary);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.section-header h2::before {
+    content: '';
+    width: 4px;
+    height: 20px;
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    border-radius: 2px;
+}
+
+.tabs {
+    display: flex;
+    gap: 8px;
+}
+
+.tab-btn {
+    padding: 10px 20px;
+    border: none;
+    background: transparent;
+    color: var(--text-secondary);
+    font-size: 14px;
+    font-weight: 500;
+    cursor: pointer;
+    border-radius: 20px;
+    transition: all 0.3s ease;
+    white-space: nowrap;
+}
+
+.tab-btn.active {
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    color: white;
+}
+
+.tab-btn:hover:not(.active) {
+    background: #334155;
+    color: var(--text-primary);
+}
+
+.compiler-section {
+    background: var(--card);
+    border-radius: 16px;
+    padding: 24px;
+    box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.3), 0 1px 2px 0 rgba(0, 0, 0, 0.2);
+    margin-bottom: 32px;
+}
+
+.compiler-tab {
+    display: none;
+}
+
+.compiler-tab.active {
+    display: block;
+}
+
+.editor-wrapper {
+    margin-bottom: 24px;
+}
+
+.code-editor {
+    width: 100%;
+    min-height: 300px;
+    padding: 16px;
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    font-family: 'Courier New', monospace;
+    font-size: 14px;
+    color: var(--text-primary);
+    background: #0f172a;
+    resize: vertical;
+    transition: border-color 0.3s ease;
+}
+
+.code-editor:focus {
+    outline: none;
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+}
+
+.editor-controls {
+    display: flex;
+    gap: 12px;
+    margin-top: 12px;
+    justify-content: flex-end;
+}
+
+.btn-file-upload {
+    padding: 10px 20px;
+    background: var(--primary-color);
+    color: #0f172a;
+    border: none;
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background 0.3s ease;
+    white-space: nowrap;
+}
+
+.btn-file-upload:hover {
+    background: var(--primary-dark);
+}
+
+.btn-save {
+    padding: 10px 20px;
+    background: var(--card);
+    color: var(--text-primary);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    white-space: nowrap;
+}
+
+.btn-save:hover {
+    border-color: var(--primary-color);
+    background: rgba(59, 130, 246, 0.1);
+}
+
+.run-controls {
+    margin: 16px 0;
+    text-align: right;
+}
+
+.btn-run {
+    padding: 10px 20px;
+    background: var(--secondary-color);
+    color: #0f172a;
+    border: none;
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.btn-run:hover {
+    background: #059669;
+}
+
+.console-output {
+    background: #0f172a;
+    border-radius: 12px;
+    padding: 16px;
+    min-height: 120px;
+    color: #a8d8ff;
+    font-family: 'Courier New', monospace;
+    font-size: 12px;
+    line-height: 1.5;
+    white-space: pre-wrap;
+    overflow: hidden;
+    margin-top: 12px;
+}
+
+.file-info {
+    margin-top: 12px;
+    padding-top: 12px;
+    border-top: 1px solid var(--border);
+}
+
+.file-name {
+    color: var(--text-secondary);
+    font-size: 12px;
+}
+
+.info-section {
+    background: var(--card);
+    border-radius: 16px;
+    padding: 24px;
+    box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.3), 0 1px 2px 0 rgba(0, 0, 0, 0.2);
+}
+
+.info-header {
+    margin-bottom: 24px;
+    padding-bottom: 24px;
+    border-bottom: 1px solid var(--border);
+}
+
+.info-content {
+    display: grid;
+    grid-template-columns: 1fr 250px;
+    gap: 24px;
+    align-items: start;
+}
+
+.teacher-profile {
+    background: var(--card);
+    border-radius: 16px;
+    padding: 24px;
+    text-align: center;
+    border: 2px solid var(--border);
+    transition: border-color 0.3s ease, transform 0.3s ease;
+}
+
+.teacher-profile:hover {
+    border-color: var(--primary-color);
+    transform: translateY(-2px);
+}
+
+.teacher-avatar {
+    position: relative;
+    width: 120px;
+    height: 120px;
+    margin: 0 auto 20px;
+}
+
+.avatar-svg {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    background: #3b82f6;
+}
+
+.avatar-svg circle {
+    cx: 60;
+    cy: 60;
+    r: 50;
+    fill: #3b82f6;
+}
+
+.avatar-svg text {
+    pointer-events: none;
+    text-anchor: middle;
+    dominant-baseline: middle;
+}
+
+.teacher-name {
+    font-size: 20px;
+    font-weight: 600;
+    color: var(--text-primary);
+    margin-bottom: 4px;
+}
+
+.teacher-title {
+    font-size: 14px;
+    color: var(--text-secondary);
+}
+
+.file-input {
+    position: absolute;
+    left: 0;
+    top: 0;
+    opacity: 0;
+    width: 100%;
+    height: 100%;
+    cursor: pointer;
+}
+
+.btn-change-avatar {
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    background: var(--primary-color);
+    color: white;
+    border: none;
+    padding: 6px 12px;
+    border-radius: 20px;
+    font-size: 12px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+}
+
+.btn-change-avatar:hover {
+    background: var(--primary-dark);
+}
+
+.teacher-absent {
+    color: var(--text-secondary);
+    font-size: 14px;
+    text-align: center;
+    padding: 40px 20px;
+}
+
+@media (max-width: 1024px) {
+    .info-content {
+        grid-template-columns: 1fr;
+    }
+    .teacher-profile {
+        margin-top: 24px;
+    }
+}
+
+@media (max-width: 768px) {
+    .container { padding: 16px; }
+    .compiler-section { padding: 16px; }
+    .code-editor { min-height: 200px; }
+    .editor-controls { flex-direction: column; align-items: stretch; }
+    .btn-file-upload, .btn-save { width: 100%; }
+    .run-controls { margin: 12px 0; }
+    .tabs { overflow-x: auto; padding-bottom: 8px; scrollbar-width: none; }
+    .tabs::-webkit-scrollbar { display: none; }
+    .tab-btn { flex: 0 0 auto; }
+}
